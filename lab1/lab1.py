@@ -70,15 +70,15 @@ def base64_decode(filename):
         input_string = file.read().replace('=', '')
         bytes_value = 0
         curr_bits = 6 * len(input_string)
-        output_bits = ceil(curr_bits/8) * 8
+        output_bits = curr_bits - (curr_bits % 8 )
 
         for char in input_string:
             bytes_value <<= 6
             number_value_of_char = ALPHABET.index(char)
             bytes_value ^= number_value_of_char
 
-        bytes_value >>= output_bits - curr_bits
-        final_bytes_string = bytes_value.to_bytes(int((2 * curr_bits - output_bits) // 8), byteorder='big')
+        bytes_value >>= abs(output_bits - curr_bits)
+        final_bytes_string = bytes_value.to_bytes(output_bits // 8, byteorder='big')
 
     return final_bytes_string
 
