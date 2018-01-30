@@ -1,0 +1,4 @@
+{
+	"credentials": {"login": "exampleLogin@wp.pl","password": "ExamplePassword" },
+	"address": {"host": "pop3.example.domain.pl","port": 110}
+}
