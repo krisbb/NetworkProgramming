@@ -1,0 +1,4 @@
+{
+	"credentials": {"login": "ExampleLogin","password": "ExamplePassword" },
+	"address": {"host": "examle.ftp.url","port": 21}
+}
